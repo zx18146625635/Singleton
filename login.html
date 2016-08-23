@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="lib/animate.min.css">
+  <link href="http://cdn.bootcss.com/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet">
+  <title></title>
+  <style>
+   *{
+     margin: 0;
+     padding: 0;
+   }
+
+   .layer{
+     position: absolute;
+     width: 200px;
+     height: 100px;
+     top:25%;
+     left: 22%;
+     background-color: rgba(0, 0, 0, 0.6);
+     text-align: center;
+     color: #fff;
+     padding-top: 100px;
+     transform: translate(-50%,-50%);
+     -webkit-border-radius: 6px;
+     -ms-border-radius: 6px;
+     border-radius: 6px;
+     animation-duration: .8s !important;
+     animation-delay:.3s !important;
+   }
+
+   #loginBtn{
+     position: absolute;
+     width: 50px;
+     height: 30px;
+     -webkit-border-radius: 6px;
+     -ms-border-radius: 6px;
+     border-radius: 6px;
+     transform: translate(50%,50%);
+     background-color: #eee;
+   }
+  </style>
+</head>
+<body>
+  <button id="loginBtn">登录</button>
+
+  <script type="text/javascript">
+  var createLoginLayer = (function(){
+    var div;
+    return function() {
+      if(!div){
+        div = document.createElement('div');
+        div.className = 'layer animated bounceIn';
+        div.innerHTML = '我是登陆浮窗';
+        div.style.display = 'none';
+        document.body.appendChild(div);
+      }
+      return div
+    }
+  })();
+    document.getElementById('loginBtn').onclick = function() {
+      var loginLayer = createLoginLayer();
+      loginLayer.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

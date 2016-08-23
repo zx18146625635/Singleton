@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="lib/animate.min.css">
+  <link href="http://cdn.bootcss.com/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet">
+  <title>打开窗口</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  .layer{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top:25%;
+    left: 22%;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fff;
+    padding-top: 100px;
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    animation-duration: .8s !important;
+    animation-delay:.3s !important;
+  }
+
+  a{
+    text-decoration: none;
+    text-align: center;
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    transform: translate(50%,50%);
+    background-color: #eee;
+    color: #000;
+  }
+  </style>
+</head>
+<body>
+ <a href="javascript:;" onclick="openWin();">登录</a>
+ <br></br><br></br><br></br>
+ <a href="javascript:;" onclick="openWin();">评论</a>
+ <br></br><br></br><br></br>
+ <a href="javascript:;" onclick="openWin();">发表</a>
+ <br></br><br></br><br></br>
+ <script src="login_win.js"></script>
+ <script type="text/javascript">
+   var openWin = function() {
+     var loginWin = LoginWinSingleton.getInstance();
+     loginWin.show();
+   }
+ </script>
+</body>
+</html>
